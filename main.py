@@ -173,7 +173,7 @@ def  lr():
             else:
                 st.write('y= %.3fx + %.3f' % (model_lr.coef_ , model_lr.intercept_))
 
-            st.write('平方2乗誤差： %.2f' % np.sqrt(mean_squared_error(y_test, y_pred)))
+            st.write('平均平方二乗誤差： %.2f' % np.sqrt(mean_squared_error(y_test, y_pred)))
 
             # グラフの描画
             fig = px.scatter(
