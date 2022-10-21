@@ -104,7 +104,8 @@ def main():
 
     # --- page選択ラジオボタン
     st.sidebar.markdown("## ページ切り替え")
-    st.session_state.page = st.sidebar.radio("ページ選択", ("データ可視化", "単回帰分析", "重回帰分析"))
+#     st.session_state.page = st.sidebar.radio("ページ選択", ("データ可視化", "単回帰分析", "重回帰分析"))
+    st.session_state.page = st.sidebar.radio("ページ選択", ("データ可視化", "単回帰分析"))
 
     # --- page振り分け
     if st.session_state.page == "input_name":
