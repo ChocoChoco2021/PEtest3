@@ -104,8 +104,8 @@ def main():
 
     # --- page選択ラジオボタン
     st.sidebar.markdown("## ページ切り替え")
-#     st.session_state.page = st.sidebar.radio("ページ選択", ("データ可視化", "単回帰分析", "重回帰分析"))
-    st.session_state.page = st.sidebar.radio("ページ選択", ("データ可視化", "単回帰分析"))
+    st.session_state.page = st.sidebar.radio("ページ選択", ("単回帰分析", "データ可視化", "重回帰分析"))
+#     st.session_state.page = st.sidebar.radio("ページ選択", ("データ可視化", "単回帰分析"))
 
     # --- page振り分け
     if st.session_state.page == "input_name":
@@ -396,20 +396,21 @@ def multi_lr():
                 y_pred = model_lr.predict(X_test)
 
                 # ログを記録
-                # add_row_to_gsheet(
-                #     gsheet_connector,
-                #     [
-                #         [
-                #             datetime.datetime.now(
-                #                 datetime.timezone(datetime.timedelta(hours=9))
-                #             ).strftime("%Y-%m-%d %H:%M:%S"),
-                #              st.session_state.username,
-                #             "重回帰分析",
-                #             y_label,
-                #             "_".join(x_labels),
-                #         ]
-                #     ],
-                # )
+                add_row_to_gsheet(
+                    gsheet_connector,
+                    [
+                        [
+                            datetime.datetime.now(
+                                datetime.timezone(datetime.timedelta(hours=9))
+                            ).strftime("%Y-%m-%d %H:%M:%S"),
+                             st.session_state.username,
+                            "重回帰分析",
+                            y_label,
+                            "_".join(x_labels),
+                            "-",
+                        ]
+                    ],
+                )
 
                 # 結果の表示
                 coef = model_lr.coef_[0]
