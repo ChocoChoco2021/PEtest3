@@ -64,6 +64,7 @@ def connect_to_gsheet():
 def add_row_to_gsheet(gsheet_connector, row):
     gsheet_connector.values().append(
         spreadsheetId=SHEET_ID,
+        range=f"{SHEET_NAME}!A:G",
         body=dict(values=row),
         valueInputOption="USER_ENTERED",
     ).execute()
