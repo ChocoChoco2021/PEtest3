@@ -322,7 +322,7 @@ def lr():
                         "単回帰分析",
                         y_label,
                         x_label,
-                        "-",
+                        df_type,
                     ]
                 ],
             )
@@ -407,7 +407,7 @@ def multi_lr():
                             "重回帰分析",
                             y_label,
                             "_".join(x_labels),
-                            "-",
+                            df_type,
                         ]
                     ],
                 )
